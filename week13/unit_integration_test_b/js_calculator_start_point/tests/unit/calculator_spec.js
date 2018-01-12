@@ -26,4 +26,9 @@ describe('calculator', function () {
    assert.equal(0, calculator.runningTotal);
   })
 
+  it('it should divide', function() {
+   calculator.divide(1);
+   assert.equal(0, calculator.runningTotal);
+  })
+
 });
