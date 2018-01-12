@@ -61,4 +61,16 @@ describe('calculator functionality', function() {
    expect(running_total.getAttribute('value')).to.eventually.equal('7')
   })
 
+  // Can we chain multiple operations together?
+  it('should update display with result of multiple operations', function() {
+   running_total = element(by.css('#running_total'))
+   element(by.css('#number5')).click();
+   element(by.css('#operator_multiply')).click();
+   element(by.css('#number1')).click();
+   element(by.css('#operator_equals')).click();
+   element(by.css('#number5')).click();
+   element(by.css('#operator_add')).click();
+   element(by.css('#operator_equals')).click();
+   expect(running_total.getAttribute('value')).to.eventually.equal('10')
+  })
 });
