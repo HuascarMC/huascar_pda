@@ -27,11 +27,20 @@ describe('calculator functionality', function() {
   // Do each of the arithmetical operations work to update the display with the result of the operation?
   it('should update display with result of operation add', function() {
    running_total = element(by.css('#running_total'))
-   element(by.css('#number7')).click();
+   element(by.css('#number6')).click();
    element(by.css('#operator_add')).click();
-   element(by.css('#number2')).click();
+   element(by.css('#number1')).click();
    element(by.css('#operator_equals')).click();
-   expect(running_total.getAttribute('value')).to.eventually.equal('14')
+   expect(running_total.getAttribute('value')).to.eventually.equal('7')
+  })
+
+  it('should update display with result of operation multiply', function() {
+   running_total = element(by.css('#running_total'))
+   element(by.css('#number6')).click();
+   element(by.css('#operator_multiply')).click();
+   element(by.css('#number1')).click();
+   element(by.css('#operator_equals')).click();
+   expect(running_total.getAttribute('value')).to.eventually.equal('6')
   })
 
 });
