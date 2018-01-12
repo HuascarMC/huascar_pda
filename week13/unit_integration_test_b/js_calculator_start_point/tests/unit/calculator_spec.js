@@ -35,4 +35,11 @@ describe('calculator', function () {
    calculator.numberClick(7);
    assert.equal(7, calculator.runningTotal);
   })
+
+  it('it should clear click', function() {
+   calculator.clearClick();
+   assert.equal(0, calculator.runningTotal);
+   assert.equal(null, calculator.previousTotal);
+   assert.equal(null, calculator.previousOperator);
+  })
 });
