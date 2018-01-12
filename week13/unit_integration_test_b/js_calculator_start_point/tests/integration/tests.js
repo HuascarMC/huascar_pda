@@ -45,11 +45,20 @@ describe('calculator functionality', function() {
 
   it('should update display with result of operation multiply', function() {
    running_total = element(by.css('#running_total'))
-   element(by.css('#number6')).click();
+   element(by.css('#number7')).click();
    element(by.css('#operator_multiply')).click();
    element(by.css('#number1')).click();
    element(by.css('#operator_equals')).click();
-   expect(running_total.getAttribute('value')).to.eventually.equal('6')
+   expect(running_total.getAttribute('value')).to.eventually.equal('7')
+  })
+
+  it('should update display with result of operation divide', function() {
+   running_total = element(by.css('#running_total'))
+   element(by.css('#number7')).click();
+   element(by.css('#operator_divide')).click();
+   element(by.css('#number1')).click();
+   element(by.css('#operator_equals')).click();
+   expect(running_total.getAttribute('value')).to.eventually.equal('7')
   })
 
 });
