@@ -21,4 +21,9 @@ describe('calculator', function () {
    assert.equal(-1, calculator.runningTotal);
   })
 
+  it('it should multiply', function() {
+   calculator.multiply(1);
+   assert.equal(0, calculator.runningTotal);
+  })
+
 });
