@@ -107,4 +107,10 @@ describe('calculator functionality', function() {
    element(by.css('#operator_equals')).click();
    expect(running_total.getAttribute('value')).to.eventually.equal('Infinity')
   })
+
+  it('should show cleared on dislay when clear is clicked', function() {
+   running_total = element(by.css('#running_total'))
+   element(by.css('#clear')).click();
+   expect(running_total.getAttribute('value')).to.eventually.equal('Cleared')
+  })
 });

@@ -2,9 +2,9 @@ window.onload = function(){
 
   var calculator = new Calculator();
 
-  var updateView = function() {
+  var updateView = function(value) {
     var runningTotal = document.querySelector('#running_total');
-    runningTotal.value = calculator.runningTotal;
+    runningTotal.value = value;
   };
 
   //bind number clicks to number buttons
@@ -12,7 +12,7 @@ window.onload = function(){
   numbers.forEach(function(number) {
     number.onclick = function(e) {
       calculator.numberClick(e.target.innerText);
-      updateView();
+      updateView(calculator.runningTotal);
     };
   });
 
@@ -22,7 +22,7 @@ window.onload = function(){
     button.onclick =  function(e) {
       operator = (e.target.innerText);
       calculator.operatorClick(operator);
-      updateView();
+      updateView(calculator.runningTotal);
     };
   });
 
@@ -30,9 +30,9 @@ window.onload = function(){
   var clear = document.querySelector('#clear');
   clear.onclick = function() {
     calculator.clearClick();
-    updateView();
+    updateView('Cleared');
   };
-  
+
 
 
 }
