@@ -73,4 +73,17 @@ describe('calculator functionality', function() {
    element(by.css('#operator_equals')).click();
    expect(running_total.getAttribute('value')).to.eventually.equal('10')
   })
+
+  // Does it work as expected for a range of numbers? (positive, negative, decimals, very large numbers)
+  it('should work with negative numbers', function() {
+   running_total = element(by.css('#running_total'))
+   element(by.css('#number1')).click();
+   element(by.css('#operator_subtract')).click();
+   element(by.css('#number8')).click();
+   element(by.css('#operator_equals')).click();
+   element(by.css('#operator_multiply')).click();
+   element(by.css('#number7')).click();
+   element(by.css('#operator_equals')).click();
+   expect(running_total.getAttribute('value')).to.eventually.equal('-49')
+  })
 });
