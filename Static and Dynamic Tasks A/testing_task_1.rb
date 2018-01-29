@@ -7,7 +7,7 @@
 
 
 # def func1 val
-  if val = 1
+  # if val = 1
   return true
   else
   return false
@@ -31,12 +31,12 @@ def looper
 end
 
 failures = 0
-
-if looper == 10
-  puts "looper passed"
-else
-  puts "looper failed"
-  failures = failures + 1
+#
+# if looper == 10
+#   puts "looper passed"
+# else
+#   puts "looper failed"
+#   failures = failures + 1
 
 
 if func1(3) == false
@@ -60,4 +60,3 @@ if failures
 else
   puts "Test Passed"
 end
-#
